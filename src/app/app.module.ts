@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './components/body/body.component';
 import { HomeComponent } from './components/home/home.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { SearchPlayerComponent } from './components/search-player/search-player.component';
 import { UserTeamComponent } from './components/user-team/user-team.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -17,7 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent,
     SearchPlayerComponent,
     UserTeamComponent,
     SidenavComponent,
