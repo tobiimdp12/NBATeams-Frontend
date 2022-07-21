@@ -1,0 +1,73 @@
+#card-container {
+  background: linear-gradient(rgb(134, 133, 133) 0%, rgba(48, 71, 94, 1) 100%);
+
+  color: white;
+  position: relative;
+  height: 550px;
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+#card-container .team-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+#card-container .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#card-container .wrapper .player {
+  width: 200px;
+  height: 200px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#card-container .wrapper .sub-stats-container,
+.player-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
+}
+
+#card-container .wrapper .stats-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#card-container .wrapper .stats-container .item {
+  margin: 50px 20px;
+}
+
+
+@media (max-width:768px)
+{
+  #card-container {
+    background: linear-gradient(rgb(134, 133, 133) 0%, rgba(48, 71, 94, 1) 100%);
+    font-size: 12px;
+    color: white;
+    position: relative;
+    height: 450px;
+    width: 250px;
+    margin-bottom: 40px;
+  }
+
+  #card-container .wrapper .player {
+    width: 120px;
+    height: 120px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+

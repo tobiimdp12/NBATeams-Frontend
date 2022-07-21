@@ -1,7 +1,12 @@
 <h1>Contact</h1>
+
 <div class="form-container">
-  <h2>Contact Form</h2>
+  <img
+    src="../../../assets/jordanair.png"
+    alt="Air Jordan Logo Transparent Clipart - Air Jordan@clipartmax.com"
+  />
   <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+    <h2>Get in touch</h2>
     <input type="text" formControlName="name" placeholder="Your Name" />
     <div
       class="alert-danger"
@@ -26,10 +31,16 @@
       class="alert-danger"
       *ngIf="subject?.invalid && (subject?.dirty || subject?.touched)"
     >
-      <div class="container-error-message" *ngIf="subject?.errors?.['required']">
+      <div
+        class="container-error-message"
+        *ngIf="subject?.errors?.['required']"
+      >
         Subject is required
       </div>
-      <div class="container-error-message" *ngIf="subject?.errors?.['minlength']">
+      <div
+        class="container-error-message"
+        *ngIf="subject?.errors?.['minlength']"
+      >
         Subject must be at least 5 characters long.
       </div>
     </div>

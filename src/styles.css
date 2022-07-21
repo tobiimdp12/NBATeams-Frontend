@@ -38,4 +38,14 @@ h1 {
   font-size: 3rem;
   text-align: left;
   margin-left: 40px;
+  margin-bottom: 50px;
+}
+
+@media (max-width:768px)
+{
+  h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin-left: 0;
+  }
 }

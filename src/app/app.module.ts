@@ -12,6 +12,7 @@ import { UserTeamComponent } from './components/user-team/user-team.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlayerCardComponent } from './components/cards/player-card/player-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidenavComponent,
     BodyComponent,
     CarouselComponent,
+    PlayerCardComponent,
   ],
   imports: [
     BrowserModule,
