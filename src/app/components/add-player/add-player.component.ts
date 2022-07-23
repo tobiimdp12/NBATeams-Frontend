@@ -47,6 +47,7 @@ export class AddPlayerComponent implements OnInit {
         Validators.required,
         Validators.maxLength(5)
       ]),
+      teamId: new FormControl(''),
       birthDate: new FormControl('', [
         Validators.required,
       ]),

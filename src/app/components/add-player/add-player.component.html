@@ -54,9 +54,22 @@
       </div>
     </div>
     <input type="text" formControlName="number" placeholder="Height" />
+    <div
+    class="alert-danger"
+    *ngIf="height?.invalid && (height?.dirty || height?.touched)"
+    >
+      <div class="container-error-message" *ngIf="height?.errors?.['required']">
+        height is required
+      </div>
+      <div
+        class="container-error-message"
+        *ngIf="(height?.dirty || height?.touched) && height?.invalid && height?.errors?.['pattern']"
+      >
+        Value has to be a valid input text.
+      </div>
+    </div>
     <input type="text" formControlName="number" placeholder="Weight" />
-    <label >Image profile</label>
-    <input style="display: block;" type="file" formControlName="number" placeholder="Image profile" />
+    <input type="text" formControlName="text" placeholder="Image Profile Path" />
     <input type="text" formControlName="text" placeholder="Experience" />
     <select name="teams" id="team">
       <option value="default">-- Select a Team --</option>
