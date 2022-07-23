@@ -1,0 +1,65 @@
+<div class="form-container">
+  <form [formGroup]="addPlayerForm" (ngSubmit)="onSaveForm()">
+    <h2>Add Player</h2>
+    <input type="text" formControlName="name" placeholder="Name" />
+    <div
+      class="alert-danger"
+      *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+    >
+      <div class="container-error-message" *ngIf="name?.errors?.['required']">
+        Name is required
+      </div>
+      <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
+        Name must be at least 5 characters long.
+      </div>
+      <div
+        class="container-error-message"
+        *ngIf="(name?.dirty || name?.touched) && name?.invalid && name?.errors?.['pattern']"
+      >
+        Value has to be a valid input text.
+      </div>
+    </div>
+
+    <input type="text" formControlName="lastname" placeholder="Lastname" />
+    <div
+      class="alert-danger"
+      *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
+    >
+      <div
+        class="container-error-message"
+        *ngIf="lastname?.errors?.['required']"
+      >
+        Lastname is required
+      </div>
+      <div
+        class="container-error-message"
+        *ngIf="lastname?.errors?.['minlength']"
+      >
+        Lastname must be at least 5 characters long.
+      </div>
+    </div>
+    <input type="text" formControlName="number" placeholder="Number" />
+    <div
+    class="alert-danger"
+    *ngIf="number?.invalid && (number?.dirty || number?.touched)"
+    >
+      <div class="container-error-message" *ngIf="number?.errors?.['required']">
+        number is required
+      </div>
+      <div
+        class="container-error-message"
+        *ngIf="(number?.dirty || number?.touched) && number?.invalid && number?.errors?.['pattern']"
+      >
+        Value has to be a valid input text.
+      </div>
+    </div>
+    <input type="text" formControlName="number" placeholder="Height" />
+    <input type="text" formControlName="number" placeholder="Weight" />
+    <label >Image profile</label>
+    <input style="display: block;" type="file" formControlName="number" placeholder="Image profile" />
+    <input type="text" formControlName="number" placeholder="Height" />
+    <button type="submit" class="btn-send" [disabled]="!addPlayerForm.valid">
+      Add
+    </button>
+  </form>
+</div>

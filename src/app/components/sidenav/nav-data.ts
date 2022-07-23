@@ -19,6 +19,11 @@ export const navbarData = [
         icon: 'fa fa-phone',
         label: 'Contact'
     },
+    {
+      routeLink: 'add-player',
+      icon: 'fa fa-search',
+      label: 'Add Player'
+    },
 
 
 ];
