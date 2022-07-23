@@ -32,8 +32,24 @@ export class AddPlayerComponent implements OnInit {
       number: new FormControl('', [
         Validators.required,
         Validators.pattern(this.onlyNumberPattern),
-      ])
-
+      ]),
+      weight: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.onlyNumberPattern),
+      ]),
+      height: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.onlyNumberPattern),
+      ]),
+      imageProfilePath: new FormControl('', [
+      ]),
+      position: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(5)
+      ]),
+      birthDate: new FormControl('', [
+        Validators.required,
+      ]),
     });
   }
 
@@ -61,6 +77,23 @@ export class AddPlayerComponent implements OnInit {
 
   get number() {
     return this.addPlayerForm.get('number');
+  }
+
+  get weight() {
+    return this.addPlayerForm.get('weight');
+  }
+  get height() {
+    return this.addPlayerForm.get('height');
+  }
+
+  get imageProfilePath() {
+    return this.addPlayerForm.get('imageProfilePath');
+  }
+  get position() {
+    return this.addPlayerForm.get('position');
+  }
+  get birthDate() {
+    return this.addPlayerForm.get('birthDate');
   }
   //#endregion
 }
