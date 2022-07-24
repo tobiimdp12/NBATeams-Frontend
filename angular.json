@@ -95,6 +95,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "0e8be1c7-407b-4272-b01c-ca084166dc7c"
+=======
+    "analytics": "6d2bfe34-2876-4daf-af23-c6bc356dcb92"
+>>>>>>> NBATeams-209-PlayersService
   }
 }
