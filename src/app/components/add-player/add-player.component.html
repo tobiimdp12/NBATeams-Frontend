@@ -1,80 +1,263 @@
 <div class="form-container">
+  <h1 style="margin: 1rem 0;">Add New Player</h1>
   <form [formGroup]="addPlayerForm" (ngSubmit)="onSaveForm()">
-    <h2>Add Player</h2>
-    <input type="text" formControlName="name" placeholder="Name" />
-    <div
-      class="alert-danger"
-      *ngIf="name?.invalid && (name?.dirty || name?.touched)"
-    >
-      <div class="container-error-message" *ngIf="name?.errors?.['required']">
-        Name is required
+    <!--Player basic data form-->
+    <div class="forms-container">
+      <div class="formulary" id="basicdata-formulary">
+        <h2>Player Data</h2>
+        <input type="text" formControlName="name" placeholder="Name" />
+        <div
+          class="alert-danger"
+          *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+        >
+          <div class="container-error-message" *ngIf="name?.errors?.['required']">
+            Name is required
+          </div>
+          <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
+            Name must be at least 5 characters long.
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(name?.dirty || name?.touched) && name?.invalid && name?.errors?.['pattern']"
+          >
+            Value has to be a valid input text.
+          </div>
+        </div>
+        <!--Lastname-->
+        <input type="text" formControlName="lastname" placeholder="Lastname" />
+        <div
+          class="alert-danger"
+          *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
+        >
+          <div
+            class="container-error-message"
+            *ngIf="lastname?.errors?.['required']"
+          >
+            Lastname is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="lastname?.errors?.['minlength']"
+          >
+            Lastname must be at least 5 characters long.
+          </div>
+        </div>
+        <!--Number-->
+        <input type="text" formControlName="number" placeholder="Number" />
+        <div
+        class="alert-danger"
+        *ngIf="number?.invalid && (number?.dirty || number?.touched)"
+        >
+          <div class="container-error-message" *ngIf="number?.errors?.['required']">
+            Number is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(number?.dirty || number?.touched) && number?.invalid && number?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+
+        <!--Position-->
+        <input type="text" formControlName="position" placeholder="Position" />
+        <div
+        class="alert-danger"
+        *ngIf="position?.invalid && (position?.dirty || position?.touched)"
+        >
+          <div class="container-error-message" *ngIf="position?.errors?.['required']">
+            Position is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(position?.dirty || position?.touched) && position?.invalid && position?.errors?.['pattern']"
+          >
+            Value has to be a valid input text.
+          </div>
+        </div>
+         <!--Height-->
+        <input type="text" formControlName="height" placeholder="Height" />
+        <div
+        class="alert-danger"
+        *ngIf="height?.invalid && (height?.dirty || height?.touched)"
+        >
+          <div class="container-error-message" *ngIf="height?.errors?.['required']">
+            Height is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(height?.dirty || height?.touched) && height?.invalid && height?.errors?.['pattern']"
+          >
+            Value has to be a valid input text.
+          </div>
+        </div>
+        <!--Weight-->
+        <input type="text" formControlName="weight" placeholder="Weight" />
+        <div
+        class="alert-danger"
+        *ngIf="weight?.invalid && (weight?.dirty || weight?.touched)"
+        >
+          <div class="container-error-message" *ngIf="weight?.errors?.['required']">
+            weight is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(weight?.dirty || weight?.touched) && weight?.invalid && weight?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!--end-->
+        <input type="text" formControlName="imageProfilePath" placeholder="Image Profile Path" />
+
+        <input type="text" formControlName="experience" placeholder="Experience" />
+        <div
+        class="alert-danger"
+        *ngIf="experience?.invalid && (experience?.dirty || experience?.touched)"
+        >
+          <div class="container-error-message" *ngIf="experience?.errors?.['required']">
+            Experience is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(experience?.dirty || experience?.touched) && experience?.invalid && experience?.errors?.['pattern']"
+          >
+            Value has to be a valid input text.
+          </div>
+        </div>
+
+        <input type="date" formControlName="birthDate" placeholder="BirthDate" />
+        <div
+        class="alert-danger"
+        *ngIf="birthDate?.invalid && (birthDate?.dirty || birthDate?.touched)"
+        >
+          <div class="container-error-message" *ngIf="birthDate?.errors?.['required']">
+            Birth Date is required
+          </div>
+        </div>
+        <select id="standard-select" name="teams" >
+          <option value="default">-- Select a Team --</option>
+          <option value="The Tiggers">The Tiggers</option>
+        </select>
       </div>
-      <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
-        Name must be at least 5 characters long.
-      </div>
-      <div
-        class="container-error-message"
-        *ngIf="(name?.dirty || name?.touched) && name?.invalid && name?.errors?.['pattern']"
-      >
-        Value has to be a valid input text.
+      <!--Player stats form-->
+      <div class="formulary" id="stats-formulary">
+        <h2>Player Stats</h2>
+        <!-- PPG -->
+        <input type="text" formControlName="ppg" placeholder="PPG" />
+        <div
+          class="alert-danger"
+          *ngIf="ppg?.invalid && (ppg?.dirty || ppg?.touched)"
+        >
+          <div class="container-error-message" *ngIf="ppg?.errors?.['required']">
+            PPG is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(ppg?.dirty || ppg?.touched) && ppg?.invalid && ppg?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- RPG -->
+        <input type="text" formControlName="rpg" placeholder="RPG" />
+        <div
+          class="alert-danger"
+          *ngIf="rpg?.invalid && (rpg?.dirty || rpg?.touched)"
+        >
+          <div
+            class="container-error-message"
+            *ngIf="rpg?.errors?.['required']"
+          >
+            RPG is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(rpg?.dirty || rpg?.touched) && rpg?.invalid && rpg?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- APG -->
+        <input type="text" formControlName="apg" placeholder="APG" />
+        <div
+        class="alert-danger"
+        *ngIf="apg?.invalid && (apg?.dirty || apg?.touched)"
+        >
+          <div class="container-error-message" *ngIf="apg?.errors?.['required']">
+            APG is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(apg?.dirty || apg?.touched) && apg?.invalid && apg?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- PIE -->
+        <input type="text" formControlName="pie" placeholder="PIE" />
+
+        <div
+        class="alert-danger"
+        *ngIf="pie?.invalid && (pie?.dirty || pie?.touched)"
+        >
+          <div class="container-error-message" *ngIf="pie?.errors?.['required']">
+            PIE is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(pie?.dirty || pie?.touched) && pie?.invalid && pie?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+         <!-- end -->
+
+        <!-- Assists -->
+        <input type="text" formControlName="assists" placeholder="Assists" />
+
+        <div
+        class="alert-danger"
+        *ngIf="assists?.invalid && (assists?.dirty || assists?.touched)"
+        >
+          <div class="container-error-message" *ngIf="assists?.errors?.['required']">
+            Assists is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(assists?.dirty || assists?.touched) && assists?.invalid && assists?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- Points -->
+        <input type="text" formControlName="points" placeholder="Points" />
+        <div
+        class="alert-danger"
+        *ngIf="points?.invalid && (points?.dirty || points?.touched)"
+        >
+          <div class="container-error-message" *ngIf="points?.errors?.['required']">
+            Points is required
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="(points?.dirty || points?.touched) && points?.invalid && points?.errors?.['pattern']"
+          >
+            Value has to be a valid input number.
+          </div>
+        </div>
+        <!-- end -->
       </div>
     </div>
 
-    <input type="text" formControlName="lastname" placeholder="Lastname" />
-    <div
-      class="alert-danger"
-      *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
-    >
-      <div
-        class="container-error-message"
-        *ngIf="lastname?.errors?.['required']"
-      >
-        Lastname is required
-      </div>
-      <div
-        class="container-error-message"
-        *ngIf="lastname?.errors?.['minlength']"
-      >
-        Lastname must be at least 5 characters long.
-      </div>
-    </div>
-    <input type="text" formControlName="number" placeholder="Number" />
-    <div
-    class="alert-danger"
-    *ngIf="number?.invalid && (number?.dirty || number?.touched)"
-    >
-      <div class="container-error-message" *ngIf="number?.errors?.['required']">
-        number is required
-      </div>
-      <div
-        class="container-error-message"
-        *ngIf="(number?.dirty || number?.touched) && number?.invalid && number?.errors?.['pattern']"
-      >
-        Value has to be a valid input text.
-      </div>
-    </div>
-    <input type="text" formControlName="number" placeholder="Height" />
-    <div
-    class="alert-danger"
-    *ngIf="height?.invalid && (height?.dirty || height?.touched)"
-    >
-      <div class="container-error-message" *ngIf="height?.errors?.['required']">
-        height is required
-      </div>
-      <div
-        class="container-error-message"
-        *ngIf="(height?.dirty || height?.touched) && height?.invalid && height?.errors?.['pattern']"
-      >
-        Value has to be a valid input text.
-      </div>
-    </div>
-    <input type="text" formControlName="number" placeholder="Weight" />
-    <input type="text" formControlName="text" placeholder="Image Profile Path" />
-    <input type="text" formControlName="text" placeholder="Experience" />
-    <select name="teams" id="team">
-      <option value="default">-- Select a Team --</option>
-      <option value="The Tiggers">The Tiggers</option>
-    </select>
     <button type="submit" class="btn-send" [disabled]="!addPlayerForm.valid">
       Add
     </button>
